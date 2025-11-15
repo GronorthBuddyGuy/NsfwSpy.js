@@ -1,0 +1,35 @@
+{
+    "name": "@your-scope/browser",
+    "version": "1.0.0",
+    "description": "ML library for web browsers with TensorFlow.js",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "tsc --build",
+        "clean": "rm -rf dist tsconfig.tsbuildinfo"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/your-username/your-repo.git"
+    },
+    "author": "Your Name",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/your-username/your-repo/issues"
+    },
+    "homepage": "https://github.com/your-username/your-repo",
+    "keywords": [
+        "machine-learning",
+        "ml",
+        "tensorflow",
+        "browser",
+        "image-processing",
+        "classification"
+    ],
+    "devDependencies": {
+        "typescript": "^4.8.2"
+    },
+    "dependencies": {
+        "@tensorflow/tfjs": "^3.20.0"
+    }
+}

@@ -1,0 +1,31 @@
+# Source files (we only want to publish dist/)
+src/
+tsconfig.json
+tsconfig.tsbuildinfo
+
+# Development files
+*.test.ts
+*.test.js
+__tests__/
+coverage/
+
+# Build files
+.cache/
+*.log
+
+# Git
+.git/
+.gitignore
+
+# Documentation (keep README.md)
+*.md
+!README.md
+
+# CI/CD
+.github/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo

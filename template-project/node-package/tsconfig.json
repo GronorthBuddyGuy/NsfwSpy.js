@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "target": "es5",
+        "composite": true,
+        "module": "commonjs",
+        "declaration": true,
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "skipLibCheck": true,
+        "declarationMap": true,
+        "emitDeclarationOnly": false,
+        "strict": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true
+    },
+    "include": [
+        "src"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/__tests__/*"
+    ]
+}

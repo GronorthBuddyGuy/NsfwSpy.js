@@ -1,0 +1,62 @@
+# Publish packages to npm
+name: Publish to npm
+
+on:
+  release:
+    types: [created]
+
+  # Allows manual publishing
+  workflow_dispatch:
+
+jobs:
+  publish-browser:
+    name: Publish Browser Package
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies
+        working-directory: ./browser-package
+        run: npm ci
+
+      - name: Build
+        working-directory: ./browser-package
+        run: npm run build
+
+      - name: Publish to npm
+        working-directory: ./browser-package
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  publish-node:
+    name: Publish Node Package
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies
+        working-directory: ./node-package
+        run: npm ci
+
+      - name: Build
+        working-directory: ./node-package
+        run: npm run build
+
+      - name: Publish to npm
+        working-directory: ./node-package
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
